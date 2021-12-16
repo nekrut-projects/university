@@ -2,6 +2,7 @@ package ru.gb.university.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.gb.university.model.Student;
 import ru.gb.university.repositories.StudentRepository;
 
@@ -26,6 +27,7 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
+    @Transactional
     public void delete(Long id) {
         studentRepository.deleteById(id);
     }
